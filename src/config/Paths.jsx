@@ -5,6 +5,7 @@ import { Route, Switch} from 'react-router-dom';
 import Home from '../pages/Home';
 import Catalog from '../pages/Catalog';
 import Detail from '../pages/Detail';
+import MyList from '../pages/MyList';
 
 
 const Paths = () => {
@@ -26,6 +27,10 @@ const Paths = () => {
             path='/'
             exact 
             component={Home}
+        />
+        <Route 
+            path='/:saved/:id'
+            component={MyList}
         />
     </Switch>
   );
