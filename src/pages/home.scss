@@ -1,0 +1,98 @@
+@use "../scss" as *;
+
+.slide__item {
+
+    .posterImage {
+        height: 600px;
+    }
+    
+    .posterImage > img {
+        margin: auto;
+        display: block;
+        width: 100%;
+    }
+    
+    .posterImage__overlay {
+        position: absolute;
+        padding: 3rem;
+        bottom: 0px;
+        height: 70%;
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        justify-content: flex-end;
+        align-items: flex-start;
+        background-image: linear-gradient(rgb(0,0,0,0), $body-bg);
+        opacity: 1;
+        transition: opacity .3s;
+    
+        & > * ~ * {
+            margin-top: 1.5rem;
+        }
+    
+        &__overlay:hover {
+            opacity: 1;
+        }
+    
+    
+    }
+    
+    .title {
+        font-weight: 700;
+        font-size: 4rem;
+        margin-bottom: 0.4rem;
+        text-align: left;
+    
+        @include tablet {
+            font-size: 3rem;
+        }
+    }
+    
+    .overview{
+        font-style: italic;
+        font-size: 1rem;
+        margin-bottom: 0.25rem;
+        display: flex;
+        text-align: left;
+        width: 50%;
+        font-weight: 500;
+    }
+    
+    .btns > * ~ * {
+        margin-left: 1rem;
+    }
+    
+    .btns,
+    .title,
+    .overview {
+        opacity: 0;
+        transform: translateX(100px);
+        transition: transform 1s ease, opacity 1s ease;
+    }
+    
+    &.active {
+        .btns,
+        .title,
+        .overview {
+            opacity: 1;
+            transform: translateX(0);
+        }
+    
+        .btns {
+            transition-delay: 0.3s, 0.3s;
+        }
+    
+        .posterImage__title {
+            transition-delay: 0.2s, 0.2s;
+        }
+    
+        .overview {
+            transition-delay: 0.1s, 0.1s;
+        }
+    }
+
+}
+
+
+
+

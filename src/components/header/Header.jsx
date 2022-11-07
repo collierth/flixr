@@ -10,16 +10,20 @@ const headerNav = [
     path: '/'
   },
   {
-    display: 'Movies',
+    display: 'All Movies',
     path: '/movie'
   },
   {
-    display: 'TV Shows',
-    path: '/tv'
+    display: 'Checklist',
+    path: '/'
   },
   {
-    display: 'My List',
-    path: '/mylist'
+    display: 'Description',
+    path: '/'
+  },
+  {
+    display: 'About Us',
+    path: '/'
   },
 ]
 
@@ -65,7 +69,8 @@ const Header = () => {
         </div>
         <div className="header__login container">
           <ul className="header__log">
-              <li><a href="">Login</a></li>
+              <li><Link to="/mylist">My List</Link></li>
+              <li><Link to="/catalog">Login</Link></li>
           </ul>
         </div>
     </div>
