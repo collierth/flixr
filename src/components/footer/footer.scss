@@ -10,9 +10,9 @@
     
 
     &__content {
-        max-width: 1000px;
+        max-width: 500px;
         display: flex;
-        justify-content: center;
+        justify-content: left;
 
         &__logo {
             @include flex(center, center);
@@ -20,32 +20,11 @@
 
             h2 {
                 font-size: 30px;
-                margin-right: 10px;
+                margin-right: 30px;
             }
 
             img {
                 width: 30%
-            }
-        }
-
-        @__menus {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-
-            @include mobile {
-                grid-template-columns: repeat(2, 1fr);
-            }
-        }
-
-        &__menu {
-            @include flex(flex-start, flex-start);
-            flex-direction: column;
-            margin-top: 1rem;
-            font-size: 1.5rem;
-            font-weight: 600;
-
-            & > * ~ * {
-                margin-top: 1rem;
             }
         }
     }
