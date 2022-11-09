@@ -29,7 +29,7 @@ const Home = () => {
   const [ trendingMovies, setTrendingMovies ] = useState([])
 
   useEffect(() => {
-    fetch("https://api.themoviedb.org/3/trending/movie/week?api_key=5466b7f9715fde9407c767ec4cfbdb90&language=en-US")
+    fetch("https://api.themoviedb.org/3/trending/movie/day?api_key=5466b7f9715fde9407c767ec4cfbdb90&language=en-US")
     .then(res => res.json())
     .then(data => setTrendingMovies(data.results.slice(0, 10)))
   }, [])

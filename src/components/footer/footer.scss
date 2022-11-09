@@ -1,0 +1,52 @@
+@use "../../scss/" as *;
+
+.footer {
+    position: relative;
+    padding: 6rem 2rem;
+    background-position: bottom;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-image: linear-gradient(to top, rgb(0,0,0,0), $body-bg), url(../../assets/samuel-regan-asante-unsplash.jpg);
+    
+
+    &__content {
+        max-width: 1000px;
+        display: flex;
+        justify-content: center;
+
+        &__logo {
+            @include flex(center, center);
+            margin-bottom: 3rem;
+
+            h2 {
+                font-size: 30px;
+                margin-right: 10px;
+            }
+
+            img {
+                width: 30%
+            }
+        }
+
+        @__menus {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+
+            @include mobile {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        &__menu {
+            @include flex(flex-start, flex-start);
+            flex-direction: column;
+            margin-top: 1rem;
+            font-size: 1.5rem;
+            font-weight: 600;
+
+            & > * ~ * {
+                margin-top: 1rem;
+            }
+        }
+    }
+}
