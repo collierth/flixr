@@ -1,7 +1,8 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState, useContext } from 'react';
+
 import { useParams } from 'react-router';
 
-import tmdbApi from '../api/tmdbApi';
+import tmdbApi, { movieType } from '../api/tmdbApi';
 import apiConfig from '../api/apiConfig';
 
 import './detail.scss';
@@ -9,6 +10,8 @@ import './detail.scss';
 import MovieList from '../components/movie-list/MovieList';
 import button, { OutlineButton } from '../components/button/Button';
 import Cast from '../components/cast/Cast';
+
+
 
 const Detail = () => {
 
@@ -40,7 +43,7 @@ const Detail = () => {
                             </div>
                             <div className="movie-content__info">
                                 <div className="rating">
-                                    <h1>{item.vote_average.toFixed(1)}</h1>
+                                    <h2>{item.vote_average.toFixed(1)} / 10</h2>
                                 </div>
                                 <div className="main">
                                     <h1 className="title">
@@ -85,5 +88,6 @@ const Detail = () => {
         </>
     );
 }
+
 
 export default Detail;

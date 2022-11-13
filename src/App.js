@@ -11,7 +11,7 @@ import Paths from './config/Paths';
 
 function App() {
   return (
-    <BrowserRouter>
+         <BrowserRouter>
        <Route render={props => (
         <>
           <Header {...props}/>
@@ -19,7 +19,7 @@ function App() {
           <Footer/>
         </>
        )}/>
-    </BrowserRouter>
+      </BrowserRouter>
   );
 }
 
