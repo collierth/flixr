@@ -1,0 +1,28 @@
+@use "../../scss/" as *;
+
+.movie-card {
+    position: relative;
+    background-position: top;
+    background-repeat: no-repeat;
+    background-size: cover;
+    padding-top: 15%;
+
+    transition: all ease .5s;
+
+    &:hover {
+        animation-direction: alternate;
+            translate: 0px -20px;
+            transition: translate ease .5s;
+    }
+    
+    img {
+        border-radius: $border-radius;
+        transition: all ease .3s;
+
+        &:hover {
+            animation-direction: alternate;
+            opacity: 0.7;
+            transition: opacity ease .3s;
+    }
+    }
+}

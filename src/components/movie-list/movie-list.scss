@@ -1,0 +1,19 @@
+@use "../../scss/breakpoint" as *;
+
+.movie-list {
+    padding-left: 20px;
+
+    .swiper-slide {
+        width: 12.5%;
+        padding-top: 10px;
+
+        @include tablet {
+            width: 30%;
+        }
+
+        @include mobile {
+            width: 40%;
+        }
+
+    }
+}

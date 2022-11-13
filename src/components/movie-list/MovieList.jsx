@@ -7,10 +7,10 @@ import { SwiperSlide, Swiper } from 'swiper/react';
 
 import { Link } from 'react-router-dom';
 
-import Button from '../button/Button';
-
 import tmdbApi, { category } from '../../api/tmdbApi';
 import apiConfig from '../../api/apiConfig';
+
+import Similar from '../movie-card/Similar';
 
 const MovieList = props => {
 
@@ -32,7 +32,7 @@ const MovieList = props => {
         } else {
             response = await tmdbApi.similar(props.category, props.id);
         }
-        setItems(response.results);
+        setItems(response.results.slice(0,));
     }
     getList();
   }, []);
@@ -46,8 +46,10 @@ const MovieList = props => {
         >
             {
                 items.map((item, i) => (
-                    <SwiperSlide>
-                        <img src={apiConfig.w500Image(item.poster_path)} alt="" />
+                    <SwiperSlide key={i}>
+                        <Link style={{textDecoration:"none",color:"white"}} to={`/movie/${item.id}`} >
+                            <Similar item={item} category={props.category}/>
+                        </Link>
                     </SwiperSlide>
                 ))
             }    

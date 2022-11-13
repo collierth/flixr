@@ -103,7 +103,6 @@ const SlideItem = props => {
         <div
             className={`slide__item ${props.className}`}
         >
-        <Link style={{textDecoration:"none",color:"white"}} to={`/movie/${item.id}`} >
             <div className="posterImage">
                 <img src={`https://image.tmdb.org/t/p/original${item && item.backdrop_path}`} />
             </div>
@@ -111,15 +110,13 @@ const SlideItem = props => {
                 <div className="title">{item ? item.original_title: ""}</div>
                 <div className="overview">{item.overview}</div>
                 <div className="btns">
-                    <Button onClick={() => history.pushState('/movie/' + item.id)}>
-                        More Info
-                    </Button>
-                    <OutlineButton>
-                        Watch Trailer
-                    </OutlineButton>
+                    <Link to={`/movie/${item.id}`}>
+                        <OutlineButton onClick={() => history.pushState('/movie/' + item.id)}>
+                            More Info
+                        </OutlineButton>
+                    </Link>
                 </div>
             </div>
-        </Link>
         </div>
     )
 }
